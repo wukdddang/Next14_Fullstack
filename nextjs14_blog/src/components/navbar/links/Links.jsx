@@ -1,26 +1,31 @@
+"use client";
+
 import NavLink from "./navLink/navLink";
 
 import styles from "./links.module.css";
+import { useState } from "react";
+
+const links = [
+  {
+    title: "Homepage",
+    path: "/",
+  },
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+  {
+    title: "Blog",
+    path: "/blog",
+  },
+];
 
 const Links = () => {
-  const links = [
-    {
-      title: "Homepage",
-      path: "/",
-    },
-    {
-      title: "About",
-      path: "/about",
-    },
-    {
-      title: "Contact",
-      path: "/contact",
-    },
-    {
-      title: "Blog",
-      path: "/blog",
-    },
-  ];
+  const [open, setOpen] = useState(false);
 
   // TEMPORARY
   const session = true;
