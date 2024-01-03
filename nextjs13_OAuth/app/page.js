@@ -1,3 +1,9 @@
+import UserInfo from "@/components/UserInfo";
+
 export default function Home() {
-  return <h1>Hello</h1>;
+  return (
+    <div className="grid place-items-center h-screen -mt-24">
+      <UserInfo />
+    </div>
+  );
 }
