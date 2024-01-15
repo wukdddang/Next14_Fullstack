@@ -20,6 +20,7 @@ export const DELETE = async (request, { params }) => {
   const { slug } = params;
 
   try {
+    const name = name;
     connectToDb();
 
     await Post.deleteOne({ slug });
