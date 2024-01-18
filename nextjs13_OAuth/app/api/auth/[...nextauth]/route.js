@@ -5,7 +5,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 
-const authOptions = {
+export const authOptions = {
   adapter: MongoDBAdapter(clientPromise, {
     databaseName: "nextjs13_OAuth",
   }),
@@ -15,6 +15,13 @@ const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  session: {
+    // jwt: true,
+    maxAge: 1 * 24 * 60 * 60, // 1 day
+  },
+  // jwt: {
+
+  // }
   // callbacks: {
   //   async signIn({ user, account }) {
   //     console.log("User: ", user);
