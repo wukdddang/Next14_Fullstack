@@ -19,6 +19,16 @@ export const authOptions = {
     // jwt: true,
     maxAge: 1 * 24 * 60 * 60, // 1 day
   },
+  callbacks: {
+    async session({ session, user }) {
+      // console.log("Session: ", session);
+      // console.log("Token: ", token);
+      // console.log("User: ", user);
+      // session.accessToken = token.accessToken;
+      session.user = user;
+      return session;
+    },
+  },
   // jwt: {
 
   // }
@@ -61,4 +71,4 @@ export const authOptions = {
 
 const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST, handler as auth };

@@ -1,11 +1,16 @@
 // app/_middleware.ts
 import { NextResponse } from "next/server";
 import { getSession } from "next-auth/react";
-import { cookies } from "next/headers";
+// import { cookies } from "next/headers";
 // import { getServerSession } from "next-auth";
 // import { authOptions } from "./app/api/auth/[...nextauth]/route";
 
 export async function middleware(req) {
+  // console.log(req);
+  console.log(req);
+  const session = await getSession({ req });
+  console.log(session);
+  // console.log(session);
   // const cookieStore = cookies();
   // console.log(cookieStore);
   // console.log(cookieStore.get("next-auth.session-token"));
